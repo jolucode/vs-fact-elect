@@ -1,0 +1,63 @@
+curl --location 'http://localhost:8080/api/documentos/emitir' \
+--header 'Content-Type: application/json' \
+--data '{
+    "cabecera": {
+        "tipoDocumento": "01",
+        "serieNumero": "F003-00123458",
+        "fechaEmision": "2025-05-03",
+        "horaEmision": "14:30:00",
+        "fechaVencimiento": "2025-05-03",
+        "moneda": "PEN",
+        "formaPago": "Credito",
+        "montoEnLetras": "SEIS MIL SEISCIENTOS VEINTISEIS CON 67/100 SOLES"
+    },
+    "emisor": {
+        "tipoDocumento": "6",
+        "ruc": "20459099213",
+        "razonSocial": "SOPRIN S.A.C.",
+        "ubigeo": "150108",
+        "direccion": "AV. SANTA ANITA 542 URB. VILLA MARINA",
+        "codigoEstablecimiento": "0000",
+        "ciudad": "LIMA",
+        "departamento": "LIMA",
+        "distrito": "CHORRILLOS",
+        "direccionCompleta": "AV. PRIMAVERA NRO. 1228"
+    },
+    "cliente": {
+        "tipoDocumento": "6",
+        "ruc": "20132373524",
+        "razonSocial": "ESPARQ CONSTRUCCION SAC",
+        "direccion": "-"
+    },
+    "items": [
+        {
+            "descripcion": "IMPRIMANTE BASE MAJESTAD bol x 25 kg",
+            "cantidad": 250,
+            "precioUnitario": 25.46,
+            "precioUnitarioConIGV": 30.04,
+            "tipoPrecio": "01",
+            "codigo": "6000093",
+            "unidadMedida": "NIU",
+            "igv": 18.00
+        }
+    ],
+    "totales": {
+        "subtotal": 6365.00,
+        "igv": 1145.70,
+        "total": 7510.70
+    },
+    "cuotas": [
+        {
+            "id": "Cuota001",
+            "fechaVencimiento": "2025-06-18",
+            "monto": 7510.70
+        }
+    ],
+    "referencias": {
+        "ordenCompra": "00133802",
+        "guiaRemision": {
+            "numero": "T003-00007209",
+            "tipo": "09"
+        }
+    }
+}'
